@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "nome": "Ana Silva",
+      "email": "ana.silva@email.com.br",
+      "endereco": {
+        "logradouro": "Rua das Flores",
+        "numero": "123",
+        "complemento": "Apto 405",
+        "bairro": "Centro",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "CEP": "12345-678"
+      },
+      "data_nascimento": "1985-01-01",
+      "telefone": "(11) 98765-4321",
+      "compras": [
+        {
+          "data": "2023-11-15",
+          "valor": 123.45,
+          "produtos": [
+            {
+              "nome": "Produto A",
+              "quantidade": 1
+            },
+            {
+              "nome": "Produto B",
+              "quantidade": 2
+            }
+          ]
+        },
+        {
+          "data": "2024-03-01",
+          "valor": 54.32,
+          "produtos": [
+            {
+              "nome": "Produto C",
+              "quantidade": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "João Pereira",
+      "email": "joao.pereira@email.com",
+      "endereco": {
+        "logradouro": "Avenida Paulista",
+        "numero": "987",
+        "bairro": "Jardins",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "CEP": "12345-987"
+      },
+      "data_nascimento": "1990-07-10",
+      "telefone": "(11) 91234-5678",
+      "compras": []
+    },
+    {
+      "id": 3,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@email.com.br",
+      "endereco": {
+        "logradouro": "Rua Tiradentes",
+        "numero": "321",
+        "bairro": "Centro",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "CEP": "23456-789"
+      },
+      "data_nascimento": "1975-12-24",
+      "telefone": "(21) 87654-3210",
+      "compras": [
+        {
+          "data": "2024-02-02",
+          "valor": 987.65,
+          "produtos": [
+            {
+              "nome": "Produto X",
+              "quantidade": 5
+            },
+            {
+              "nome": "Produto Y",
+              "quantidade": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  
