@@ -44,6 +44,6 @@ app.delete("/clients/:id", function(request, response){
     response.json(clientsFiltered);
 })
 
-app.listen(3000, function(){
+app.listen(3001, function(){
     console.log('servidor rodando...')
 })
