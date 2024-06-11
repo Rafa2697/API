@@ -1,72 +1,39 @@
-import express from 'express';
+import express from 'express'
 import { PrismaClient } from '@prisma/client'
 
+
 const prisma = new PrismaClient()
-
-const app = express();
+const app = express()
 app.use(express.json())
+const users = []
 
-const users = [];
-
-app.post('/users', async (req, res) => {
-
-    await prisma.user.create({
-        data: {
-            email: req.body.email,
-            name: req.body.name,
-            age: req.body.age
-        }
-    })
-
-    res.status(201).json(req.body)
-})
-
-app.get('/users', async (req, res) => {
-
-    let users = []
-
-    if(req.query){
-        users = await prisma.user.findMany({
-            where: {
-                name: req.query.name
-            }
-        })
-    }else{
-        users - await prisma.user.findMany()
-    }
-    
-
+//busca de usuario
+app.get('/users', (req, res) => {
     res.status(200).json(users)
 })
 
-//rota de atualizaçaõ
-
-app.put('/users/:id', async (req, res) => {
-    await prisma.user.update({
-        where: {
-            id: req.params.id
-        },
-
-        data: {
+//inserindo usuarios
+app.post('/users', async (req, res) => {
+    
+    await prisma.user.create({
+        data:{
+            nome: req.body.nome,
+            ra: req.body.ra,
             email: req.body.email,
-            name: req.body.name,
-            age: req.body.age
+            senha: req.body.senha
         }
+        
     })
+    console.log(req.body.senha)
 
-    res.status(201).json(req.body)
+    res.status(201).send('ok post')
 })
 
-
-//rota para o delete
-app.delete('/users/:id', async (req, res) => {
-    await prisma.user.delete({
-        where: {
-            id: req.params.id
-        }
-    })
-
-    res.status(200).json({ message: 'Usuario deletado' })
+//deletando usuario
+app.delete('/users', (req, res) => {
+    
 })
 
-app.listen(3000)
+app.listen(3000, () => {
+    console.log("servidor ativado...")
+})
